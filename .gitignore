@@ -42,3 +42,4 @@ _meta
 .serverless
 
 .webpack
+.dynamodb
