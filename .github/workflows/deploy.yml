@@ -25,4 +25,4 @@ jobs:
     uses: nolram/github-actions/.github/workflows/serverless-cicd.yml@main
     with:
       AWS_REGION: ${{ env.AWS_REGION }}
-      secrets: inherit
+    secrets: inherit
