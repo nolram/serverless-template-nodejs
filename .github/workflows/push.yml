@@ -1,4 +1,4 @@
-name: Deploy with Serveless Framework on AWS
+name: Check Vulnerabilities in the project
 
 on: [push]
 
