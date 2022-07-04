@@ -8,6 +8,4 @@ permissions:
 jobs:
   deploy:
     uses: nolram/github-actions/.github/workflows/check_push_node.yml@main
-    with:
-      project_type: "node"
     secrets: inherit
