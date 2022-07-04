@@ -1,0 +1,15 @@
+name: Deploy with Serveless Framework on AWS
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    uses: nolram/github-actions/.github/workflows/check_push_node.yml@main
+    with:
+      AWS_REGION: "us-east-1"
+      project_type: "node"
+
+    secrets: inherit
