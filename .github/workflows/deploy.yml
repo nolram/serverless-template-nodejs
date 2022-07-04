@@ -13,4 +13,6 @@ jobs:
     uses: nolram/github-actions/.github/workflows/serverless-cicd.yml@main
     with:
       AWS_REGION: "us-east-1"
+      project_type: "node"
+
     secrets: inherit
