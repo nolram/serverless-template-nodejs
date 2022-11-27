@@ -15,7 +15,8 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  deploymentMethod: direct
+  runtime: nodejs16.x
   region: us-east-1
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
