@@ -24,24 +24,7 @@ provider:
     REGION: ${opt:region, self:provider.region}
     DB_ENDPOINT: https://dynamodb.${opt:region, self:provider.region}.amazonaws.com
 
-  iam:
-    role:
-      statements:
-        - Effect: "Allow"
-          Action:
-            - dynamodb:Query
-            - dynamodb:Scan
-            - dynamodb:GetItem
-            - dynamodb:PutItem
-            - dynamodb:UpdateItem
-            - dynamodb:DeleteItem
-            - dynamodb:BatchWriteItem
-          Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.TABLE_NAME}"
-        - Effect: "Allow"
-          Action:
-            - dynamodb:Query
-            - dynamodb:Scan
-          Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.TABLE_NAME}/index/*"
+  iam: ${file(./resource/iam/Roles.yml)}
   httpApi:
     name: 'template-api-gateway-${opt:stage, "dev"}'
     cors: true

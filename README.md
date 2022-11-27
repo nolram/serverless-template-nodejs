@@ -8,7 +8,7 @@ Aplicação Lambda de exemplo, escrito em Typescript e Node 14, utiliza o framew
 
 ## Requisitos
 ```
-Node 14
+Node 16
 Serverless
 ```
 
@@ -20,9 +20,9 @@ Instalar o Serverless
 npm install -g serverless
 ```
 
-Com o DynamoDB rodando localmente e as dependencias instaladas `npm i` basta rodar o comando 
+Com o DynamoDB rodando localmente e as dependencias instaladas `yarn` basta rodar o comando:
 ```
-npm run start
+yarn start:dev
 ```
 
 ## Deploy
