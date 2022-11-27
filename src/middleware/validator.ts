@@ -6,8 +6,8 @@ export const validatorMiddleware =
   (req: Request, res: Response, next: NextFunction): void => {
     try {
       schema.validateSync(req, {
-        abortEarly: true,
-        strict: true,
+        abortEarly: false,
+        strict: false,
       })
       next()
     } catch (err) {
