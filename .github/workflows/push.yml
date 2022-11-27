@@ -4,10 +4,12 @@ on: [push]
 
 permissions:
   contents: read
+  security-events: write
+  id-token: write
 
 jobs:
   push:
-    uses: nolram/github-actions/.github/workflows/check_push_node.yml@main
+    uses: nolram/github-actions/.github/workflows/check_vulnerability.yml@main
     with:
       project_type: "node"
     secrets: inherit
