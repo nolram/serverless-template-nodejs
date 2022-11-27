@@ -4,6 +4,8 @@ on: [push]
 
 permissions:
   contents: read
+  security-events: write
+  id-token: write
 
 jobs:
   push:
