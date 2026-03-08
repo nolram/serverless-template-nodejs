@@ -1,39 +1,39 @@
-# Serverless App Dynamodb
+# Serverless Template - Node.js with DynamoDB
 
-Aplicação Lambda de exemplo, escrito em Typescript e Node 14, utiliza o framework [Serverless](https://www.serverless.com/). Realiza a criação de AWS HTTP API Gateway e uma tabela DynamoDB e realiza o deploy de duas funções AWS Lambda, getUser e insertUser.
+A sample Lambda application written in TypeScript and Node.js, using the [Serverless](https://www.serverless.com/) framework. It creates an AWS HTTP API Gateway and a DynamoDB table, and deploys two AWS Lambda functions: `getUser` and `insertUser`.
 
-## Execução
-### Deploy
+## Execution
+### Deployment
 [![asciicast](https://asciinema.org/a/424433.svg)](https://asciinema.org/a/424433)
 
-## Requisitos
+## Requirements
 ```
 Node 16
 Serverless
 ```
 
-## Rodando Localmente
-Necessário ter um DynamoDB rodando localmente, existe um script python (necessário a biblioteca boto) e um docker-compose.yml na pasta [dynamodb-local](dynamodb-local) com o setup local necessário. 
+## Running Locally
+You need to have a DynamoDB running locally. There's a Python script (requires the `boto` library) and a `docker-compose.yml` file in the [dynamodb-local](dynamodb-local) folder with the necessary local setup. 
 
-Instalar o Serverless
+Install Serverless
 ```
 npm install -g serverless
 ```
 
-Com o DynamoDB rodando localmente e as dependencias instaladas `yarn` basta rodar o comando:
-```
+With DynamoDB running locally and dependencies installed using `yarn`, simply run the command:
+```bash
 yarn start:dev
 ```
 
-## Deploy
-Necessário ter credenciais AWS na pasta `~/.aws/credentials` com as devidas [permissões](https://www.serverless.com/framework/docs/providers/aws/guide/credentials/) de uso.
+## Deployment
+You need to have AWS credentials in the `~/.aws/credentials` folder with the necessary [permissions](https://www.serverless.com/framework/docs/providers/aws/guide/credentials/) for use.
 
-```
+```bash
 sls deploy --stage dev -r us-east-1 -c serverless.yml
 ```
 
-## Teste
-```sh
+## Testing
+```bash
 
 curl --location --request POST 'https://CHANGE_URL/user' \
 --header 'Content-Type: application/json' \
@@ -45,10 +45,10 @@ curl --location --request POST 'https://CHANGE_URL/user' \
 curl --location --request GET 'https://CHANGE_URL/user/user?email=marlonbquadros@gmail.com'
 ```
 
-## CI/CD
-Na pasta [.cicd](.cicd) existe um template de [CloudFormation](https://aws.amazon.com/pt/cloudformation/) para a configuração de um [AWS CodePipeline](https://aws.amazon.com/pt/codepipeline/) com [AWS CodeBuild](https://aws.amazon.com/pt/codebuild/) para realizar o deploy do serviço Lambda. [README.md](.cicd/README.md) dentro da pasta com os comandos necessários para realizar o deploy.
+## CI/CD Pipeline
+In the [.cicd](.cicd) folder, you'll find a [CloudFormation](https://aws.amazon.com/cloudformation/) template that sets up an [AWS CodePipeline](https://aws.amazon.com/codepipeline/) with [AWS CodeBuild](https://aws.amazon.com/codebuild/) for deploying the Lambda service. See the [README.md](.cicd/README.md) in that folder for deployment instructions.
 
-## Diretório
+## Directory Structure
 ```
 .
 ├── .cicd
