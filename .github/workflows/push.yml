@@ -12,4 +12,5 @@ jobs:
     uses: nolram/github-actions/.github/workflows/check_vulnerability.yml@main
     with:
       project_type: "node"
+      node_version: "20"
     secrets: inherit

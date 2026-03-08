@@ -14,5 +14,6 @@ jobs:
     with:
       AWS_REGION: "us-east-1"
       project_type: "node"
+      node_version: "20"
 
     secrets: inherit
