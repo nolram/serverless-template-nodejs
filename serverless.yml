@@ -16,7 +16,7 @@ plugins:
 provider:
   name: aws
   deploymentMethod: direct
-  runtime: nodejs16.x
+  runtime: nodejs20.x
   region: us-east-1
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
